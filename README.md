@@ -25,11 +25,16 @@ information (so you can validate them after download).
 ```
 #!/bin/sh
 
+cd prebuilt || exit
 curl -s https://api.github.com/repos/bromite/bromite/releases/latest \
 | grep "_SystemWebView\\.apk\|brm.*txt" \
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi -
+mv arm64_* arm64
+mv x86_* x86
+mv arm_* arm
+for d in ./*/ ; do (rm -rf *txt* && cd "$d" && rm -rf *txt*); done
 ```
 
 After validating their integrity, move the packages to the designated locations. The designated locations 
