@@ -37,7 +37,7 @@ mv arm_* arm
 for d in ./*/ ; do (rm -rf *txt* && cd "$d" && rm -rf *txt*); done
 cd ..
 git add .
-git commit -s
+git commit -s || Add new apk [$(date +%r)]
 git push
 ```
 
