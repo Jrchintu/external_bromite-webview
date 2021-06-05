@@ -24,8 +24,8 @@ information (so you can validate them after download).
 
 ```
 #!/bin/sh
-
-cd prebuilt || exit
+git clone git@github.com:Jrchintu/android_external_bromite-webview-nb.git -b master data
+cd data/prebuilt || exit
 curl -s https://api.github.com/repos/bromite/bromite/releases/latest \
 | grep "_SystemWebView\\.apk\|brm.*txt" \
 | cut -d : -f 2,3 \
@@ -35,6 +35,10 @@ mv arm64_* arm64
 mv x86_* x86
 mv arm_* arm
 for d in ./*/ ; do (rm -rf *txt* && cd "$d" && rm -rf *txt*); done
+cd ..
+git add .
+git commit -s
+git push
 ```
 
 After validating their integrity, move the packages to the designated locations. The designated locations 
