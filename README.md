@@ -36,6 +36,9 @@ mv x86_* x86
 mv arm_* arm
 for d in ./*/ ; do (rm -rf *txt* && cd "$d" && rm -rf *txt*); done
 cd ..
+mv prebuilt/arm/arm_SystemWebView.apk prebuilt/arm/SystemWebView.apk
+mv prebuilt/arm64/arm64_SystemWebView.apk prebuilt/arm64/SystemWebView.apk
+mv prebuilt/x86/x86_SystemWebView.apk prebuilt/x86/SystemWebView.apk
 git add .
 git commit -s -m "Add new apk [$(date +%r)]"
 git push
