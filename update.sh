@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone --depth=1 git@github.com:Jrchintu/external_bromite-webview.git -b R11 data && cd data2 || exit
+git clone --depth=1 git@github.com:Jrchintu/external_bromite-webview.git -b R11 DEADDIR && cd DEADDIR || exit
 curl -s https://api.github.com/repos/bromite/bromite/releases/latest \
 | grep "_SystemWebView\\.apk\|brm.*txt" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 rm -rf ./*txt*
@@ -9,4 +9,4 @@ mv arm_* prebuilt/arm/SystemWebView.apk
 git add .
 git commit -s -m "Update apk $(date)"
 git push
-cd .. && rm -rf data2
+cd .. && rm -rf DEADDIR
