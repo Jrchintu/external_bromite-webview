@@ -1,6 +1,5 @@
 # External_bromite-webview
 Prebuilt Android System Webview from www.bromite.org
-
 Replaces the default Android System Webview with the 'Bromite' SystemWebView component in Custom ROM builds
 
 ## Credits
@@ -23,5 +22,5 @@ found to simply download the latest packages for all supported architectures at 
 information (so you can validate them after download).
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/Jrchintu/external_bromite-webview/R11/update.sh )
+bash <(curl -s https://raw.githubusercontent.com/Jrchintu/external_bromite-webview/R11/update.sh)
 ```
