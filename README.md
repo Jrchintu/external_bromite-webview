@@ -1,4 +1,4 @@
-# android_external_bromite-webview
+# External_bromite-webview
 Prebuilt Android System Webview from www.bromite.org
 
 Replaces the default Android System Webview with the 'Bromite' SystemWebView component in Custom ROM builds
@@ -15,38 +15,9 @@ integrity, then place the downloaded binaries of respective architectures to the
 - Specify `PRODUCT_PACKAGES += bromite-webview` in a 'product' .mk file (**not** in an Android.mk file)
 - An 'elegant' way to do so without having to fork and track any specific device or vendor repository is to simply 
 create an own product.mk file in directory vendor/extras (or to add the above statement into an existing one)
-- It is not necessary to remove the default webview repo from the build tree
+- It is not necessary to remove the default webview repo from the build tree.
 
-## Downloading Packages
+## Updating Packages
 This branch does not include the packages. You need to download them from official website. Here's an example I 
 found to simply download the latest packages for all supported architectures at once, as well as the checksum 
 information (so you can validate them after download).
-
-```
-#!/bin/sh
-git clone --depth=1 git@github.com:Jrchintu/android_external_bromite-webview-nb.git -b R11 data
-cd data/prebuilt || exit
-curl -s https://api.github.com/repos/bromite/bromite/releases/latest \
-| grep "_SystemWebView\\.apk\|brm.*txt" \
-| cut -d : -f 2,3 \
-| tr -d \" \
-| wget -qi -
-mv arm64_* arm64
-mv x86_* x86
-mv arm_* arm
-for d in ./*/ ; do (rm -rf *txt* && cd "$d" && rm -rf *txt*); done
-cd ..
-mv prebuilt/arm/arm_SystemWebView.apk prebuilt/arm/SystemWebView.apk
-mv prebuilt/arm64/arm64_SystemWebView.apk prebuilt/arm64/SystemWebView.apk
-mv prebuilt/x86/x86_SystemWebView.apk prebuilt/x86/SystemWebView.apk
-git add .
-git commit -s -m "Add new apk [$(date +%r)]"
-git push
-```
-
-After validating their integrity, move the packages to the designated locations. The designated locations 
-for System WebView packages are:
-
-- `arm_SystemWebView.apk` goes to `prebuilt/arm/SystemWebView.apk`.
-- `arm64_SystemWebView.apk` goes to `prebuilt/arm64/SystemWebView.apk`.
-- `x86_SystemWebView.apk` goes to `prebuilt/x86/SystemWebView.apk`.
