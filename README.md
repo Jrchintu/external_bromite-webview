@@ -21,3 +21,7 @@ create an own product.mk file in directory vendor/extras (or to add the above st
 This branch does not include the packages. You need to download them from official website. Here's an example I 
 found to simply download the latest packages for all supported architectures at once, as well as the checksum 
 information (so you can validate them after download).
+
+```
+bash <(curl -s https://raw.githubusercontent.com/Jrchintu/external_bromite-webview/R11/update.sh )
+```
