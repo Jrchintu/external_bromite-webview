@@ -24,7 +24,7 @@ information (so you can validate them after download).
 
 ```
 #!/bin/sh
-git clone git@github.com:Jrchintu/android_external_bromite-webview-nb.git -b master data
+git clone --depth=1 git@github.com:Jrchintu/android_external_bromite-webview-nb.git -b R11 data
 cd data/prebuilt || exit
 curl -s https://api.github.com/repos/bromite/bromite/releases/latest \
 | grep "_SystemWebView\\.apk\|brm.*txt" \
