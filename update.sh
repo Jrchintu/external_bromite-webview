@@ -6,7 +6,6 @@ rm -rf ./*txt*
 mv arm64_* prebuilt/arm64/SystemWebView.apk
 mv x86_* prebuilt/x86/SystemWebView.apk
 mv arm_* prebuilt/arm/SystemWebView.apk
-git add .
-git commit -s -m "Update apk $(date)"
+git commit -sam "Update $(TZ=Asia/Kolkata date)"
 git push
 cd .. && rm -rf DEADDIR
