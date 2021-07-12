@@ -1,0 +1,15 @@
+name: Main Process
+on:
+  workflow_dispatch:
+  
+jobs:
+  job1:
+    name: Update Binary
+    runs-on: ubuntu-20.04
+    env:
+      GIT_PASS: ${{ secrets.GIT_PASS }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: git config
+      run: |
+       ./update.sh
