@@ -10,6 +10,6 @@ jobs:
       GIT_PASS: ${{ secrets.GIT_PASS }}
     steps:
     - uses: actions/checkout@v2
-    - name: git config
+    - name: Main Job
       run: |
-       chmod a+x ./update.sh && ./update.sh
+       ls -la && chmod a+x ./update.sh && ./update.sh
