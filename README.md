@@ -6,6 +6,8 @@ Replaces the default Android System Webview with the 'Bromite' SystemWebView com
 I have only taken the apk files (arm, arm64, x86) from https://www.bromite.org/system_web_view  and created an 'Androik.mk' file around. 
 All credits go to the Chromium project (https://www.chromium.org/Home) and the developers behind Bromite. Please visit the 
 respective pages listed above for more information and the respective Copyright and License
+- https://github.com/MSe1969/android_external_bromite-webview [MAIN REPO]
+- https://github.com/lss4/android_external_bromite-webview [FORK]
 
 ## How to include into your Custom ROM build
 - Include this repo into your local manifest (path does not matter, suggest external/bromite-webview)
