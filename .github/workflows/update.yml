@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Main Job
       run: |
-       ls -la && chmod a+x ./update.sh && ./update.sh
+       chmod a+x ./update.sh && ./update.sh
