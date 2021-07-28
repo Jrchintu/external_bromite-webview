@@ -13,6 +13,7 @@ rm -rf ./*txt*
 mv arm64_* prebuilt/arm64/SystemWebView.apk
 mv x86_* prebuilt/x86/SystemWebView.apk
 mv arm_* prebuilt/arm/SystemWebView.apk
+rm -rvf *apk*
 git add -A
 git commit -sa -m "Update $(TZ=Asia/Kolkata date)"
 git push
