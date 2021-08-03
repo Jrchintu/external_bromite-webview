@@ -1,7 +1,10 @@
 name: Main Process
 on:
   schedule:
-    - cron: "0 0 * * 3"
+    - cron: "0 0 * * sun"
+    - cron: "0 0 * * tue"
+    - cron: "0 0 * * thu"
+    - cron: "0 0 * * fri"
   workflow_dispatch:
 
 jobs:
@@ -9,6 +12,7 @@ jobs:
     name: Update Binary
     runs-on: ubuntu-20.04
     env:
+      TZ: Asia/Kolkata
       GIT_PASS: ${{ secrets.GIT_PASS }}
     steps:
     - uses: actions/checkout@v2
