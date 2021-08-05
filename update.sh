@@ -18,3 +18,4 @@ git add -A
 git commit -sa -m "Update $(TZ=Asia/Kolkata date)"
 git push
 cd .. && rm -rf DEADDIR
+rm -rf ~/.git-credentials
